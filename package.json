@@ -15,15 +15,13 @@
   ],
   "author": "Ryan Fitzgerald (original author), Syed Mohsin",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0"
-  },
-  "dependencies": {
+    "gulp-uglify": "^2.0.0",
     "express": "^4.15.3"
   }
 }
