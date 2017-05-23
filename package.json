@@ -4,17 +4,16 @@
   "description": "",
   "main": "js/scripts.js",
   "scripts": {
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "start": "gulp && node server.js"
   },
   "keywords": [
     "portfolio",
     "personal",
     "website",
-    "tech",
-    "coding",
-    "dev"
+    "chemical engineering"
   ],
-  "author": "Ryan Fitzgerald",
+  "author": "Ryan Fitzgerald (original author), Syed Mohsin",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -23,5 +22,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
   }
 }

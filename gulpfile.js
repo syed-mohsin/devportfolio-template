@@ -13,11 +13,9 @@ gulp.task('scripts', function() {
                 this.emit('end');
             }
         })))
-        .pipe(uglify({
-            preserveComments: 'license'
-        }))
+        .pipe(uglify())
         .pipe(rename({extname: '.min.js'}))
-        .pipe(gulp.dest('js'));
+        .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('styles', function() {
@@ -30,8 +28,10 @@ gulp.task('styles', function() {
         })))
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(autoprefixer())
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('public/css'));
 });
+
+gulp.task('default', ['scripts', 'styles']);
 
 gulp.task('watch', ['scripts', 'styles'], function() {
     gulp.watch('js/*.js', ['scripts']);
