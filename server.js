@@ -9,6 +9,10 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/monica-torralba-resume', function(req, res) {
+	res.sendFile(path.join(__dirname, 'public', 'Monica_Torralba_Resume.pdf'));
+})
+
 app.listen(process.env.PORT || 3000, function() {
-	console.log('Started Mica\'s website on port 3000!!');
+	console.log('Started Mica\'s website on port', process.env.PORT || 3000, '!!!');
 });
