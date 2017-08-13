@@ -122,10 +122,19 @@
   // initialize 5 animals
   Array(10).fill(null).map(function () { loadAnimal() });
 
+  function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+  }
+
   // create scroll listener
   $(window).on('scroll', function() {
 
-     if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+     if($(window).scrollTop() + $(window).height() === getDocHeight()) {
        console.log(reqs);
        Array(10).fill(null).map(function () { loadAnimal() });
      }
