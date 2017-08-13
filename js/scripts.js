@@ -115,12 +115,12 @@
   }
 
   // initialize 5 animals
-  Array(5).fill(null).map(function () { loadAnimal() });
+  Array(10).fill(null).map(function () { loadAnimal() });
 
   // create scroll listener
   $(window).scroll(function() {
      if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
-       Array(5).fill(null).map(function () { loadAnimal() });
+       Array(10).fill(null).map(function () { loadAnimal() });
      }
   });
 
