@@ -98,19 +98,19 @@
 
 (function($) {
   console.log('animals!');
-  // var cache = new Set();
-  var reqs = 0;
+  var cache = new Set();
+
   function loadAnimal() {
-    reqs++;
-    if (reqs % 100 === 0) {
-      alert('whoa!');
-    }
-
-    $.ajax('/api/random-animal')
+    $.ajax({
+      url: '/api/random-animal',
+      cache: false,
+    })
     .then(function(res) {
-      // if (cache.has(res)) { return; }
+      if (cache.has(res)) {
+        return;
+      }
 
-      // cache.add(res);
+      cache.add(res);
       var animal = $('<div class="animal"></div>').append($('<img></img>').attr('src', res));
       $('.animals_container').append(animal);
     })
@@ -134,7 +134,7 @@
   // create scroll listener
   $(window).on('scroll', function() {
 
-     if($(window).scrollTop() + $(window).height() === getDocHeight()) {
+     if($(window).scrollTop() + $(window).height() === getDocHeight() - 100) {
        console.log(reqs);
        Array(10).fill(null).map(function () { loadAnimal() });
      }
