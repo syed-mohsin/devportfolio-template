@@ -134,8 +134,7 @@
   // create scroll listener
   $(window).on('scroll', function() {
 
-     if($(window).scrollTop() + $(window).height() === getDocHeight() - 100) {
-       console.log(reqs);
+     if($(window).scrollTop() + $(window).height() > getDocHeight() - 100) {
        Array(10).fill(null).map(function () { loadAnimal() });
      }
   });
