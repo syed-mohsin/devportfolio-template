@@ -95,3 +95,30 @@
     });
 
 })(jQuery);
+
+(function($) {
+  console.log('animals!');
+
+  function loadAnimal() {
+    $.ajax('/api/random-animal')
+    .then(function(res) {
+      var animal = $('<div class="animal"></div>').append($('<img></img>').attr('src', res));
+      $('.animals_container').append(animal);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  // initialize 5 animals
+  Array(5).fill(null).map(function () { loadAnimal() });
+
+  // create scroll listener
+  $(window).scroll(function() {
+     if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+       Array(3).fill(null).map(function () { loadAnimal() });
+     }
+  });
+
+
+})(jQuery);

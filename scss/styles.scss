@@ -955,6 +955,10 @@ footer {
         text-align: center;
     }
 
+    .animal img {
+      max-width: 100% !important;
+    }
+
 }
 
 // Extra Small Devices
@@ -975,4 +979,19 @@ footer {
         }
     }
 
+}
+
+/*
+    ---------------------------------------
+    ----- 11. Animal Section Styles -----
+    ---------------------------------------
+*/
+
+.animals_container {
+  text-align: center;
+}
+
+.animal img {
+  max-width: 500px;
+  margin-bottom: 10px;
 }
