@@ -99,8 +99,11 @@
 (function($) {
   console.log('animals!');
   var cache = new Set();
-
+  var reqs = 0;
   function loadAnimal() {
+    reqs++;
+    if (reqs % 100 === 0) alert(whoa!);
+    
     $.ajax('/api/random-animal')
     .then(function(res) {
       if (cache.has(res)) { return; }
