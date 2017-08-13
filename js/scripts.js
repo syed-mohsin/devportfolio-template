@@ -98,7 +98,7 @@
 
 (function($) {
   console.log('animals!');
-  var cache = new Set();
+  // var cache = new Set();
   var reqs = 0;
   function loadAnimal() {
     reqs++;
@@ -108,9 +108,9 @@
 
     $.ajax('/api/random-animal')
     .then(function(res) {
-      if (cache.has(res)) { return; }
+      // if (cache.has(res)) { return; }
 
-      cache.add(res);
+      // cache.add(res);
       var animal = $('<div class="animal"></div>').append($('<img></img>').attr('src', res));
       $('.animals_container').append(animal);
     })
