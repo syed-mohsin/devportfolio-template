@@ -119,7 +119,7 @@
 
   // create scroll listener
   $(window).scroll(function() {
-     if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+     if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
        Array(5).fill(null).map(function () { loadAnimal() });
      }
   });
