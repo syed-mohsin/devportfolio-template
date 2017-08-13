@@ -102,8 +102,10 @@
   var reqs = 0;
   function loadAnimal() {
     reqs++;
-    if (reqs % 100 === 0) alert(whoa!);
-    
+    if (reqs % 100 === 0) {
+      alert('whoa!');
+    }
+
     $.ajax('/api/random-animal')
     .then(function(res) {
       if (cache.has(res)) { return; }
@@ -121,8 +123,10 @@
   Array(10).fill(null).map(function () { loadAnimal() });
 
   // create scroll listener
-  $(window).scroll(function() {
-     if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+  $(window).on('scroll', function() {
+
+     if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+       console.log(reqs);
        Array(10).fill(null).map(function () { loadAnimal() });
      }
   });
